@@ -1,0 +1,1 @@
+kill `ps -ef | grep hard_drive.py | grep -v grep | awk '{print $2}'`; cd ~/server_resource_monitoring; git stash; git pull; pip install -r requirements.txt; nohup python -u hard_drive.py > stdout_hard_drive_`date +"%m-%d-%y"`.txt 2> stderr_hard_drive_`date +"%m-%d-%y"`.txt &
