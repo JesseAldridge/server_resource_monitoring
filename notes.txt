@@ -1,0 +1,41 @@
+# https://github.com/search?q=monitoring
+
+## hard drive
+
+https://stackoverflow.com/questions/48929553/get-hard-disk-size-in-python
+
+## memory
+
+https://pymotw.com/2/resource/
+https://docs.python.org/3/library/resource.html
+
+https://github.com/JesseAldridge/screen_recorder/blob/master/_0_mem_logger.py
+
+pip install -U memory_profiler
+# https://pypi.org/project/memory-profiler/
+
+# -h = human; -s 100 = update every 100 seconds
+# no timestamp
+# can I prepend?
+# use with cron?
+free -hs 100 > mem.txt &
+
+# doesn't work?
+vmstat 10 | awk '{now=strftime("%Y-%m-%d %T "); print now $0}' > vmstat.txt &
+
+# only runs once
+top -n 1 -b | head
+
+# tasks that have not used any CPU since the last update will not be  displayed.
+# i = idle; -c = command-line; -b = batch-mode; d 10 = delay 10 seconds before running
+top icbd 10 > top.txt &
+
+# works if I don't use the output flag
+# switch to python2?
+# sudo apt update; sudo apt upgrade; # didn't help
+dstat -ta --top-cpu --noheader --output systemstats.csv
+
+# htop, free, statsd, graphite, atop, sysstat, munin, collectd,
+# cacti, zabbix, nagios, perfdata, icinga, shinken, snmp, netdata
+
+# https://unix.stackexchange.com/questions/332004/how-can-i-see-memory-usage-history
